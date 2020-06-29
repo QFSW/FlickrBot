@@ -12,7 +12,6 @@ import time
 upload_interval = timedelta(hours=2)
 
 auth_file = "auth.txt"
-
 config_path = 'config.json'
 db_path = 'flickr_db.json'
 
@@ -106,6 +105,7 @@ def main():
     config = load_config(config_path)
     db = load_db(db_path)
     flickr_authenticate()
+    print("Initialization successful")
 
     while True:
         images = get_images(config)
@@ -116,6 +116,8 @@ def main():
 
         if len(new_images) > 0:
             flickr_upload(random.choice(new_images), db, config)
+        else:
+            time.sleep(upload_interval.seconds / 4)
 
 if __name__ == "__main__":
     try:
