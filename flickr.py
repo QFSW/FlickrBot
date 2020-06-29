@@ -9,7 +9,7 @@ import json
 import random
 import time
 
-upload_interval = timedelta(hours=2)
+upload_interval = timedelta(hours=3)
 
 auth_file = "auth.txt"
 config_path = 'config.json'
