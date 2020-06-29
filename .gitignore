@@ -1,3 +1,4 @@
 .env
 auth.txt
 flickr_db.json
+config.json
